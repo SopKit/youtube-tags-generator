@@ -86,3 +86,40 @@ body{
   color: #644bff;
   cursor: pointer;
 }
+
+.tagbox i {
+  padding: 10px;
+
+}
+.tagbox {
+  padding: 10px;
+  margin: auto;
+  width: 80%;
+
+}
+
+
+.tagbox .tag {
+  display: inline-block;
+  padding:10px;
+  background: rgb(255, 253, 253);
+  margin: 10px;
+
+}
+
+#copy {
+  position: fixed;
+
+  display: inline-block;
+  padding:10px;
+  background: rgb(207, 161, 161);
+  margin: 10px;
+  bottom: 10px;
+  right:10px;
+  color:#fff;
+  cursor: pointer;
+
+}
+#copy i{
+  padding: 10px;
+}

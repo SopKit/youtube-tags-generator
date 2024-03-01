@@ -1,26 +1,52 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>YouTube Tags Generator - SopKit</title>
-    <link rel="stylesheet" href="style.css">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-  </head>
-  <body>
-    <div class="wrapper">
-      <div class="search-input">
-        <a href="" target="_blank" hidden></a>
-        <input type="text" placeholder="Type to search..">
-        <div class="autocom-box">
-          <!-- here list are inserted from javascript -->
-        </div>
-        <div class="icon"><i class="fas fa-search"></i></div>
+
+<head>
+  <meta charset="utf-8">
+  <title>YouTube Tags Generator - SopKit</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="search-input">
+      <a href="" target="_blank" hidden></a>
+      <input type="text" placeholder="Type to search.." onchange="result(this.value)">
+      <div class="autocom-box">
+        <!-- here list are inserted from javascript -->
       </div>
+      <div class="icon"><i class="fas fa-search"></i></div>
     </div>
+  </div>
 
-     <script src="suggestions.js"></script> 
-     <script src="script.js"></script> 
+    <div class="tagbox">
+      <span class="tag">javascript tutorial<i class="fa fa-times"></i></span>
 
-  </body>
+      <span class="tag">javascript tutorial<i class="fa fa-times"></i></span>
+      <span class="tag">javascript tutorial for beginners<i class="fa fa-times"></i></span><span
+        class="tag">javascript<i class="fa fa-times"></i></span><span class="tag">tutorial<i
+          class="fa fa-times"></i></span><span class="tag">javascript for beginners<i
+          class="fa fa-times"></i></span><span class="tag">javascript tutorials<i class="fa fa-times"></i></span><span
+        class="tag">javascript course<i class="fa fa-times"></i></span><span class="tag">learn javascript<i
+          class="fa fa-times"></i></span><span class="tag">javascript basics<i class="fa fa-times"></i></span><span
+        class="tag">javascript full course<i class="fa fa-times"></i></span><span class="tag">js tutorial<i
+          class="fa fa-times"></i></span><span class="tag">programming tutorial javascript<i
+          class="fa fa-times"></i></span><span class="tag">coding tutorial<i class="fa fa-times"></i></span><span
+        class="tag">learn javascript for beginners<i class="fa fa-times"></i></span><span class="tag">javascript
+        project<i class="fa fa-times"></i></span><span class="tag">javascript crash course<i
+          class="fa fa-times"></i></span><span class="tag">java script tutorial<i class="fa fa-times"></i></span><span
+        class="tag">tutorial javascript<i class="fa fa-times"></i></span><span class="tag">javascript tutorial ita<i
+          class="fa fa-times"></i></span><span class="tag">javascript tutorial 2020<i
+          class="fa fa-times"></i></span><span class="tag">best javascript tutorial<i class="fa fa-times"></i></span>
+    </div>
+    <span class="tag" id="copy">Copy<i class="fa fa-copy"></i></span>
+
+
+  <script src="suggestions.js"></script>
+  <script src="script.js"></script>
+
+</body>
+
 </html>

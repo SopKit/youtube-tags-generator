@@ -1,30 +1,30 @@
 let suggestions = [
-    "Channel",
-    "CodingLab",
-    "CodingNepal",
-    "YouTube",
-    "YouTuber",
-    "YouTube Channel",
-    "Blogger",
-    "Bollywood",
-    "Vlogger",
-    "Vechiles",
-    "Facebook",
-    "Freelancer",
-    "Facebook Page",
-    "Designer",
-    "Developer",
-    "Web Designer",
-    "Web Developer",
-    "Login Form in HTML & CSS",
-    "How to learn HTML & CSS",
-    "How to learn JavaScript",
-    "How to became Freelancer",
-    "How to became Web Designer",
-    "How to start Gaming Channel",
-    "How to start YouTube Channel",
-    "What does HTML stands for?",
-    "What does CSS stands for?",
+    // "Channel",
+    // "CodingLab",
+    // "CodingNepal",
+    // "YouTube",
+    // "YouTuber",
+    // "YouTube Channel",
+    // "Blogger",
+    // "Bollywood",
+    // "Vlogger",
+    // "Vechiles",
+    // "Facebook",
+    // "Freelancer",
+    // "Facebook Page",
+    // "Designer",
+    // "Developer",
+    // "Web Designer",
+    // "Web Developer",
+    // "Login Form in HTML & CSS",
+    // "How to learn HTML & CSS",
+    // "How to learn JavaScript",
+    // "How to became Freelancer",
+    // "How to became Web Designer",
+    // "How to start Gaming Channel",
+    // "How to start YouTube Channel",
+    // "What does HTML stands for?",
+    // "What does CSS stands for?",
 ];
 
 // getting all required elements
@@ -33,18 +33,24 @@ const inputBox = searchWrapper.querySelector("input");
 const suggBox = searchWrapper.querySelector(".autocom-box");
 const icon = searchWrapper.querySelector(".icon");
 let linkTag = searchWrapper.querySelector("a");
+let tagbox = document.querySelector(".tagbox");
+
 let webLink;
 
+document.querySelector("#copy").addEventListener("click",copyArrayToStringAndClipboard);
 // if user press any key and release
 inputBox.onkeyup = (e)=>{
     let userData = e.target.value; //user enetered data
     let emptyArray = [];
     if(userData){
         icon.onclick = ()=>{
-            webLink = `https://www.google.com/search?q=${userData}`;
-            linkTag.setAttribute("href", webLink);
-            linkTag.click();
+            // webLink = `https://www.google.com/search?q=${userData}`;
+            // linkTag.setAttribute("href", webLink);
+            // linkTag.click();
+            result(userData)
+
         }
+        result(userData)
         emptyArray = suggestions.filter((data)=>{
             //filtering array value and user characters to lowercase and return only those words which are start with user enetered chars
             return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
@@ -87,3 +93,42 @@ function showSuggestions(list){
     suggBox.innerHTML = listData;
 }
 
+
+let result=query=>{
+    fetch('https://wholly-api.appspages.online/get/website-data.php?get_html=https://www.rapidtags.io/api/generator?type=YouTube&query='+query).then((d)=>d.json()).then((e)=> {
+        let html="";
+        window.arr = e.tags;
+        e.tags.forEach(element => {
+            html+='<span class="tag">'+element+'<i class="fa fa-times"></i></span>';
+        });
+    tagbox.innerHTML = html;
+    })
+
+}
+
+function copyArrayToStringAndClipboard() {
+    if (!Array.isArray(arr)) {
+      console.error("Input is not an array.");
+      return;
+    }
+  
+    const stringToCopy = arr.join(', ');
+  
+    // Create a temporary textarea element to copy the text to the clipboard
+    const tempTextArea = document.createElement('textarea');
+    tempTextArea.value = stringToCopy;
+    document.body.appendChild(tempTextArea);
+  
+    // Select the text in the textarea
+    tempTextArea.select();
+    tempTextArea.setSelectionRange(0, 99999); /* For mobile devices */
+  
+    // Copy the text to the clipboard
+    document.execCommand('copy');
+  
+    // Remove the temporary textarea
+    document.body.removeChild(tempTextArea);
+  
+    console.log(`Copied to clipboard: ${stringToCopy}`);
+  }
+  
