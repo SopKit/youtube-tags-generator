@@ -95,7 +95,8 @@ function showSuggestions(list){
 
 
 let result=query=>{
-    fetch('https://wholly-api.appspages.online/get/website-data.php?get_html='+encodeURIComponent('https://www.rapidtags.io/api/generator?type=YouTube&query='+query)).then((d)=>d.json()).then((e)=> {
+    //  fetch('https://wholly-api.appspages.online/get/website-data.php?get_html='+encodeURIComponent('https://www.rapidtags.io/api/generator?type=YouTube&query='+query)).then((d)=>d.json()).then((e)=> {
+        fetch('https://whollyapi.vercel.app/api/html?url='+encodeURIComponent('https://www.rapidtags.io/api/generator?type=YouTube&query='+query)).then((d)=>d.json()).then((e)=> {
         let html="";
         window.arr = e.tags;
         e.tags.forEach(element => {
@@ -130,5 +131,8 @@ function copyArrayToStringAndClipboard() {
     document.body.removeChild(tempTextArea);
   
     console.log(`Copied to clipboard: ${stringToCopy}`);
+    document.querySelector("#copy").innerHTML="Copied... ✅";
+    setTimeout(()=>document.querySelector("#copy").innerHTML='Copy<i class="fa fa-copy">',2000)
+
   }
   
