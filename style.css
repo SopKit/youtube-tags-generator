@@ -1,125 +1,175 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-*{
+/* Reset and body styling */
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #f8f9fa;
 }
 
-body{
-  background: #644bff;
-  padding: 0 20px;
-}
-
-::selection{
-  color: #fff;
-  background: #664AFF;
-}
-
-.wrapper{
-  max-width: 450px;
-  margin: 150px auto;
-}
-
-.wrapper .search-input{
-  background: #fff;
-  width: 100%;
-  border-radius: 5px;
-  position: relative;
-  box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12);
-}
-
-.search-input input{
-  height: 55px;
-  width: 100%;
-  outline: none;
-  border: none;
-  border-radius: 5px;
-  padding: 0 60px 0 20px;
-  font-size: 18px;
-  box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
-}
-
-.search-input.active input{
-  border-radius: 5px 5px 0 0;
-}
-
-.search-input .autocom-box{
-  padding: 0;
-  opacity: 0;
-  pointer-events: none;
-  max-height: 280px;
-  overflow-y: auto;
-}
-
-.search-input.active .autocom-box{
-  padding: 10px 8px;
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.autocom-box li{
-  list-style: none;
-  padding: 8px 12px;
-  display: none;
-  width: 100%;
-  cursor: default;
-  border-radius: 3px;
-}
-
-.search-input.active .autocom-box li{
-  display: block;
-}
-.autocom-box li:hover{
-  background: #efefef;
-}
-
-.search-input .icon{
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  height: 55px;
-  width: 55px;
+/* Header styling */
+header {
+  background: linear-gradient(135deg, #4CAF50, #66BB6A);
+  color: white;
   text-align: center;
-  line-height: 55px;
-  font-size: 20px;
-  color: #644bff;
+  padding: 2rem 1rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+header p {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+header .home-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: white;
+  color: #4CAF50;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+header .home-link:hover {
+  background: #388E3C;
+  color: white;
+}
+
+/* Wrapper styling */
+.wrapper {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Search bar styling */
+.search-input {
+  position: relative;
+}
+
+.search-input input {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.search-input input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+.search-input .icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
   cursor: pointer;
 }
 
-.tagbox i {
-  padding: 10px;
-
-}
 .tagbox {
-  padding: 10px;
-  margin: auto;
-  width: 80%;
-
+  max-width: 600px;
+  margin: 1.5rem auto;
+  text-align: center;
 }
 
+.tagbox h2 {
+  margin-bottom: 1rem;
+  color: #4CAF50;
+}
 
-.tagbox .tag {
+.tag {
   display: inline-block;
-  padding:10px;
-  background: rgb(255, 253, 253);
-  margin: 10px;
+  margin: 0.3rem;
+  padding: 0.5rem 1rem;
+  background: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
 
+.tag:hover {
+  background: #388E3C;
 }
 
 #copy {
-  position: fixed;
-
+  margin-top: 1rem;
   display: inline-block;
-  padding:10px;
-  background: rgb(207, 161, 161);
-  margin: 10px;
-  bottom: 10px;
-  right:10px;
-  color:#fff;
+  padding: 0.7rem 1.2rem;
+  background: #007BFF;
+  color: white;
+  border-radius: 5px;
+  font-size: 1rem;
   cursor: pointer;
-
+  transition: background 0.3s ease;
 }
-#copy i{
-  padding: 10px;
+
+#copy:hover {
+  background: #0056b3;
+}
+
+/* FAQ section styling */
+.faq {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.faq h2 {
+  color: #4CAF50;
+  margin-bottom: 1rem;
+}
+
+.faq .question {
+  margin-bottom: 1rem;
+}
+
+.faq .question h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.faq .question p {
+  margin: 0.3rem 0 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Footer styling */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #333;
+  color: white;
+  font-size: 0.9rem;
+}
+
+footer .footer-link {
+  color: #4CAF50;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+footer .footer-link:hover {
+  text-decoration: underline;
 }
